@@ -31,13 +31,12 @@
 				if (2 < len) {
 					commands += SYMBOLS[1] + SYMBOLS[len];
 				} else {
+					len = 1;
 					let d = SYMBOLS.indexOf(commands.substr(-1, 1));
 					if (commands.substr(-2, 1) === SYMBOLS[0] && d < MAX_RANGE){
 						commands = commands.slice(0, -1) + SYMBOLS[d + 1];
-						len = 1;
 					} else {
 						commands += SYMBOLS[0] + '1';
-						len = 1;
 					}
 				}
 			}
