@@ -13,10 +13,10 @@ const revert = CCDecompress(data);
 // -> 'abcdefg000000000abcdefg'
 ```
 
-### Parameters
+### Functions
 ```javascript
-CCCompress(src, maxLength)
-CCDecompress(data, maxLength)
+CCCompress(src, maxLength = 500)
+CCDecompress(data, maxLength = 500)
 ```
 
 ## License
