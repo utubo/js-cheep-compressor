@@ -5,8 +5,8 @@ https://utubo.github.io/js-cheep-compressor/demo.html
 
 ## Usage
 ```javascript
-const str = 'abcdefg000000000abcdefg';
-const data = CCCompress(str);
+const src = 'abcdefg000000000abcdefg';
+const data = CCCompress(src);
 // -> '0719g7_abcdefg0'
 
 const revert = CCDecompress(data);
@@ -16,7 +16,7 @@ const revert = CCDecompress(data);
 ### Parameters
 ```javascript
 CCCompress(src, maxLength)
-CCDecompress(src, maxLength)
+CCDecompress(data, maxLength)
 ```
 
 ## License
