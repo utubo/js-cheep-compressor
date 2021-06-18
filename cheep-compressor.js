@@ -43,6 +43,9 @@
 			}
 			i += len;
 		}
+		while (commands.substr(-2, 1) === SYMBOLS[0]) {
+			commands = commands.slice(0, -2);
+		}
 		return commands+ '_' + seed;
 	};
 	var CCDecompress = (data, maxLength = 500) => {
@@ -70,6 +73,7 @@
 					out += out.substr(out.length - c, d);
 			}
 		}
+		out += seed.substr(i);
 		return out;
 	};
 }
