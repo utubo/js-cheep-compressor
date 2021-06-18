@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>p-data-compressor Demo</title>
+		<style>
+		body {
+			background: #303035;
+			color: #ccd;
+			padding: 1rem;
+		}
+		textarea {
+			background: #303035;
+			border: 1pt solid;
+			border-radius: 5pt;
+			color: #cdc;
+			display: block;
+			height: 5rem;
+			margin-bottom: 1rem;
+			padding: .2rem;
+			width: 100%;
+		}
+		button {
+			background: #303035;
+			border: 2pt solid;
+			border-radius: 10pt;
+			color: #cdc;
+			padding: .5rem 1rem;
+			transition: .2s;
+		}
+		button:hover {
+			background: #666;
+		}
+		.buttons {
+			margin-bottom: 1rem;
+		}
+		a {
+			color: #ac9;
+		}
+		</style>
+	</head>
+	<body>
+		<textarea id="src">12345,12345,00000</textarea>
+		<textarea id="dst"></textarea>
+		<div class="buttons">
+			<button onClick="dst.value = CCCompress(src.value);">Encode</button>
+			<button onClick="src.value = CCDecompress(dst.value);">Decode</button>
+		</div>
+		<a href="https://github.com/utubo/js-cheep-compressor">GitHub</a>
+		<script src="https://utubo.github.io/js-cheep-compressor/cheep-compressor.min.js"></script>
+	</body>
+</html>
+
