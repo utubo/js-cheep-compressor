@@ -2,9 +2,9 @@
 // Copyright (c) 2021 utubo under the [MIT](https://opensource.org/licenses/mit-license.php)
 {
 	let SYMBOLS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	let checkLen = (s, l) => {if (l < s) throw 'too long';};
+	let checkLen = (s, l) => {if (l < s.length) throw 'too long';};
 	var CCCompress = (str, maxLength = 500) => {
-		checkLen(str.length, maxLength);
+		checkLen(str, maxLength);
 		let seed = '';
 		let commands = '';
 		let MAX_RANGE = SYMBOLS.length - 1;
@@ -48,17 +48,16 @@
 		return commands+ '_' + seed;
 	};
 	var CCDecompress = (data, maxLength = 500) => {
-		checkLen(data.length, maxLength);
+		checkLen(data, maxLength);
 		let out = '';
 		let i = data.indexOf('_');
 		let commands = data.substr(0, i);
 		let seed = data.substr(i + 1);
 		i = 0;
 		for (let j = 0; j < commands.length; j += 2) {
-			checkLen(data, maxLength);
+			checkLen(out, maxLength);
 			let c = SYMBOLS.indexOf(commands[j]);
 			let d = SYMBOLS.indexOf(commands[j + 1]);
-			checkLen(d, maxLength);
 			switch (c) {
 				case 0:
 					out += seed.substr(i, d);
