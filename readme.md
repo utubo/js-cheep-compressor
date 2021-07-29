@@ -4,6 +4,7 @@ This is a very very cheep compressor
 https://utubo.github.io/js-cheep-compressor/demo.html
 
 ## Usage
+### Functions
 ```javascript
 CCCompress(src, maxLength = 500)
 CCDecompress(data, maxLength = 500)
